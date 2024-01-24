@@ -50,3 +50,12 @@ def monthly_challenge(request, month):
         return HttpResponse(response_data)
     except:
         return HttpResponseNotFound("<h1>This month is not supported!</h1>")
+
+
+def weekly_challenge(request, day):
+    try:
+        challenge_text = weekly_challenge[day]
+        response_data = f"<h1>{challenge_text}<h1>"
+        return HttpResponse(response_data)
+    except:
+        return HttpResponseNotFound("<h1>This week is not supported!<h1>")
